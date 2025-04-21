@@ -44,9 +44,11 @@ public class RunNameServer {
                 input = userInput.readLine().trim();
                 if ("exit".equalsIgnoreCase(input)) {
                     ns.remove();
+                    System.out.println("Handed off range: (" + ns.predecessorId + ", " + ns.id + "]");
                     System.out.println("Successful exit");
                 } else if (input.startsWith("enter")) {
                     ns.sendMessage("placeNode " + id + " " + ip + " " + port, bnsIp, bnsPort);
+                    System.out.println("Node range: (" + ns.predecessorId + ", " + ns.id + "]");
                 } else if (input.startsWith("quit")) {
                     return;
                 }
